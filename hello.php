@@ -31,7 +31,7 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
 
 ?>
 
- 
+<div class="loader"></div>   
 
         <nav>
             <div class="container">
