@@ -99,24 +99,24 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
 
         <section id="skills">
 
-            <div class=" container text-center">
-                <div class="row row-cols-2  row-cols-lg-5 g-2 g-lg-3">
+            <div class="  text-center">
+                <div class=" row row-cols-5 ">
 
                     <?php 
-		$sql="SELECT * FROM `habilidades`";
-		$result=mysqli_query($conectar,$sql);
-       while($mostrar=mysqli_fetch_array($result)){
+	$sql="SELECT * FROM `habilidades`";
+$result=mysqli_query($conectar,$sql);
+while($mostrar=mysqli_fetch_array($result)) {
 		
 	?>
-                    <div class="col reveal bg-white">
+                    <div class=" card col mx-5 my-5  reveal bg-white">
 
-                        <div class="p-2">
+                        <div class="p-3">
                             <img style="width:70px;height:70px" src="<?php echo $mostrar['IMG_LINK'] ?>">
 
                             <h5 ><?php echo $mostrar['TITULO'] ?></h5>
                             <p><?php echo $mostrar['DESCRIPCIÓN'] ?></p>
                         </div>
-
+                        
                     </div>
                     <?php 
         }
@@ -126,6 +126,8 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
             </div>
 
         </section>
+
+        <div class="img"></div>
 
         <section id="projects" class=" px-1 py-1">
 
