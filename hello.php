@@ -110,7 +110,7 @@ while($mostrar=mysqli_fetch_array($result)) {
 	?>
                     <div class=" card col mx-5 my-5  reveal bg-white">
 
-                        <div class="p-3">
+                        <div class="p-2">
                             <img style="width:70px;height:70px" src="<?php echo $mostrar['IMG_LINK'] ?>">
 
                             <h5 ><?php echo $mostrar['TITULO'] ?></h5>
@@ -129,38 +129,49 @@ while($mostrar=mysqli_fetch_array($result)) {
 
         <div class="img"></div>
 
-        <section id="projects" class=" px-1 py-1">
+<section id="projects">
+    <div class="text-center">
+        <div class=" row row-cols-5">
+        <?php 
+	$sql="SELECT * FROM `proyectos`";
+$result=mysqli_query($conectar,$sql);
+while($mostrar=mysqli_fetch_array($result)) {
+		
+	?>
+            <div class="card col mx-5 my-5 revealfinal">
+                <div class="p-2">
+                    <img
+                        src="<?php echo $mostrar['IMG_LINK'] ?>"
+                        style="width:200px;height:100px"
+                        alt="">
 
-            <div class="revealfinal row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                    <div class="card">
-                        <img
-                            src="imgs/1000_F_88538986_5Bi4eJ667pocsO3BIlbN4fHKz8yUFSuA.jpg"
-                            style="width:100px;height:200px"
-                            alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Aqui va el titulo de la web</h5>
+                        <h5 ><?php echo $mostrar['TITULO'] ?></h5>
 
-                            <p class="card-text">Aqui va la descripción de la web</p>
-                            <a href="https://www.twitch.com/">
-                                <button type="button" class="btn btn-outline-dark">
-                                    <i class="bi bi-github"></i>
-                                    Aqui va el link de github
-                                </button>
-                            </a>
-                            <a href="https://www.youtube.com/">
-                                <button type="button" class="btn btn-outline-info">
-                                    <i class="bi bi-globe-americas"></i>
-                                    Aqui va el link a la web
-                                </button>
-                            </a>
-                        </div>
+                        <p ><?php echo $mostrar['DESCRIPCIÓN'] ?></p>
+                        <p>FrontEnd:<?php echo $mostrar['DETALLES'] ?> </p>
+                        <p>BackEnd: <?php echo $mostrar['detalles_back'] ?></p>
+                        <a href="<?php echo $mostrar['GITHUB_LINK'] ?>">
+                            <button type="button" class="btn btn-outline-dark mb-2">
+                                <i class="bi bi-github"></i>
+                                Aqui va el link de github
+                            </button>
+                        </a>
+                        <a href="<?php echo $mostrar['WEB_LINK'] ?>">
+                            <button type="button" class="btn btn-outline-info">
+                                <i class="bi bi-globe-americas"></i>
+                                Aqui va el link a la web
+                            </button>
+                        </a>
                     </div>
                 </div>
-
+                <?php 
+        }
+        ?>
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
     </body>
     <script>
