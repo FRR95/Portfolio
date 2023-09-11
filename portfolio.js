@@ -1,10 +1,10 @@
 function reveal() {
     const sections = document.querySelectorAll("section");
-    const reveals = document.querySelectorAll(".reveal");
-    const navLi = document.querySelectorAll("nav .container ul li");
+    const revealsfirst = document.querySelectorAll(".revealfirst");
+    const navLi = document.querySelectorAll("nav .container ul li ");
     for (var i = 0; i <= sections.length; i++) {
         var pageyoffset = window.scrollY;
-        var windowHeight = window.innerHeight;
+
 
         const sectionTop = sections[i].offsetTop;
         var sectioncontactHeight = sections[i].offsetHeight;
@@ -12,7 +12,7 @@ function reveal() {
 
         if ((pageyoffset > sectionTop - 50 && pageyoffset <= sectionTop - 50 + sectioncontactHeight)) {
             navLi[i].classList.add("active");
-            reveals[i].classList.add("active");
+            revealsfirst[i].classList.add("active");
 
 
         } else {
@@ -22,6 +22,35 @@ function reveal() {
 
 
     };
+
+};
+
+function revealmiddle() {
+
+    const sections = document.querySelectorAll("section");
+    const revealsmiddle = document.querySelectorAll(".revealmiddle");
+    const navLi = document.querySelectorAll("nav .container ul li ");
+    for (var i = 0; i <= sections.length; i++) {
+        var pageyoffset = window.scrollY;
+
+
+        const sectionTop = sections[i].offsetTop;
+        var sectioncontactHeight = sections[i].offsetHeight;
+
+
+        if ((pageyoffset > sectionTop - 50 && pageyoffset <= sectionTop - 50 + sectioncontactHeight)) {
+            navLi[i].classList.add("active");
+            revealsmiddle[i].classList.add("active");
+
+
+        } else {
+            navLi[i].classList.remove("active");
+        }
+
+
+
+    };
+
 
 };
 
@@ -50,9 +79,11 @@ function revealfinal() {
 
 
 
+
+
 window.addEventListener("scroll", reveal);
 window.addEventListener("scroll", revealfinal);
-window.addEventListener("load", reveal5);
+window.addEventListener("load", revealmiddle);
 
 
 

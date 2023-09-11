@@ -70,24 +70,24 @@ section:nth-child(5) {
     background-size: cover;
 }
 
-.reveal {
+.revealfirst {
     transform: translateY(150px);
     opacity: 0;
     transition: 1s all ease;
 }
 
-.reveal.active {
+.revealfirst.active {
     transform: translateY(0);
     opacity: 1;
 }
 
-.reveal:nth-child(4) {
+.revealmiddle {
     transform: translateX(-150px);
     opacity: 0;
     transition: 1s all ease;
 }
 
-.reveal.active:nth-child(4) {
+.revealmiddle.active {
     transform: translateX(0);
     opacity: 1;
 }
