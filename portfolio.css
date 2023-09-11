@@ -23,7 +23,7 @@ html {
 /* Handle */
 
  ::-webkit-scrollbar-thumb {
-    background: rgb(0, 238, 255);
+    background: #646c88;
     border-radius: 10px;
 }
 
@@ -31,7 +31,7 @@ html {
 /* Handle on hover */
 
  ::-webkit-scrollbar-thumb:hover {
-    background: #087191;
+    background: #535970;
 }
 
 body {
@@ -50,15 +50,15 @@ body {
 }
 
 section:nth-child(2) {
-    background-color: #ddab08;
+    background-color: #ecebf2;
 }
 
 section:nth-child(3) {
-    background-color: #cc1c9765;
+    background-color: #d4d3da;
 }
 
 section:nth-child(5) {
-    background-color: #3041d6;
+    background-color: #b2b1b8;
 }
 
 .img {
@@ -70,34 +70,43 @@ section:nth-child(5) {
     background-size: cover;
 }
 
-
-/*.reveal.active {
+.reveal {
     transform: translateY(150px);
     opacity: 0;
     transition: 1s all ease;
-}*/
+}
 
-.reveal {
+.reveal.active {
     transform: translateY(0);
     opacity: 1;
 }
 
-
-/*.revealfinal.active {
-    transform: translatey(-150px);
+.reveal:nth-child(4) {
+    transform: translateX(-150px);
     opacity: 0;
     transition: 1s all ease;
-}*/
+}
+
+.reveal.active:nth-child(4) {
+    transform: translateX(0);
+    opacity: 1;
+}
 
 .revealfinal {
-    transform: translateY(0);
+    transform: translateX(-150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.revealfinal.active {
+    transform: translateX(0);
     opacity: 1;
 }
 
 nav {
     position: sticky;
     top: 0;
-    background-color: #eef0f1;
+    background-color: #646c88;
     border-radius: 0 0 20px 20px;
     z-index: 9998;
 }

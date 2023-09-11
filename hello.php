@@ -100,7 +100,7 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
         <section id="skills">
 
             <div class="  text-center">
-                <div class=" row row-cols-5 ">
+                <div class=" reveal row row-cols-5 ">
 
                     <?php 
 	$sql="SELECT * FROM `habilidades`";
@@ -108,7 +108,7 @@ $result=mysqli_query($conectar,$sql);
 while($mostrar=mysqli_fetch_array($result)) {
 		
 	?>
-                    <div class=" card col mx-5 my-5  reveal bg-white">
+                    <div class=" card col mx-5 my-5   bg-white">
 
                         <div class="p-2">
                             <img style="width:70px;height:70px" src="<?php echo $mostrar['IMG_LINK'] ?>">
@@ -131,14 +131,14 @@ while($mostrar=mysqli_fetch_array($result)) {
 
 <section id="projects">
     <div class="text-center">
-        <div class=" row row-cols-5">
+        <div class=" revealfinal row row-cols-5">
         <?php 
 	$sql="SELECT * FROM `proyectos`";
 $result=mysqli_query($conectar,$sql);
 while($mostrar=mysqli_fetch_array($result)) {
 		
 	?>
-            <div class="card col mx-5 my-5 revealfinal">
+            <div class="card col mx-5 my-5 ">
                 <div class="p-2">
                     <img
                         src="<?php echo $mostrar['IMG_LINK'] ?>"
