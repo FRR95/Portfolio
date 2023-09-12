@@ -53,8 +53,8 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
 
     <body>
 
-        <section id="whoami" class=" px-1 py-1">
-            <div class="revealfirst  my-3 container overflow-hidden text-center">
+        <section id="whoami" >
+            <div class="reveal   container  text-center">
                 <div class="row gx-5">
                     <div class="col">
                         <div class="card">
@@ -100,7 +100,7 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
         <section id="skills">
 
             <div class="  text-center">
-                <div class=" revealmiddle row row-cols-5 ">
+                <div class=" reveal  row row-cols-5 ">
 
                     <?php 
 	$sql="SELECT * FROM `habilidades`";
@@ -129,7 +129,7 @@ while($mostrar=mysqli_fetch_array($result)) {
 
         <div class="img"></div>
 
-<section id="projects">
+<section id="projects" class="sectionfinal">
     <div class="text-center">
         <div class=" revealfinal row row-cols-5">
         <?php 

@@ -70,37 +70,34 @@ section:nth-child(5) {
     background-size: cover;
 }
 
-.revealfirst {
+.reveal {
     transform: translateY(150px);
     opacity: 0;
     transition: 1s all ease;
 }
 
-.revealfirst.active {
+.reveal.active {
     transform: translateY(0);
-    opacity: 1;
-}
-
-.revealmiddle {
-    transform: translateX(-150px);
-    opacity: 0;
-    transition: 1s all ease;
-}
-
-.revealmiddle.active {
-    transform: translateX(0);
     opacity: 1;
 }
 
 .revealfinal {
     transform: translateX(-150px);
     opacity: 0;
-    transition: 1s all ease;
+    transition: 0.5s all ease;
 }
 
 .revealfinal.active {
     transform: translateX(0);
     opacity: 1;
+}
+
+.card {
+    transition: 0.5s;
+}
+
+.card:hover {
+    box-shadow: 0 0 5px black;
 }
 
 nav {
@@ -138,5 +135,15 @@ nav .container ul li.active {
 }
 
 nav .container ul li.active a {
+    color: #ffffff;
+}
+
+nav .container ul li .contact.active {
+    background-color: #3b49df;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+nav .container ul li .contact.active a {
     color: #ffffff;
 }
