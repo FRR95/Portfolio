@@ -31,9 +31,13 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
 
 ?>
 
+<div class="loader">
+
+<h3 class="mt-5">Loading</h3>
+</div>
 
 
-        <nav>
+        <nav class="nav_radius">
             <div class="container">
                 <ul>
                     <li class="home active">
@@ -54,28 +58,28 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
     <body>
 
         <section id="whoami" >
-            <div class="reveal   container  text-center">
+            <div class="reveal  container  text-center">
                 <div class="row gx-5">
-                    <div class="col">
+                    <div class="col my-3">
                         <div class="card">
                             <div class="p-3">
                                 <img
-                                    src="imgs/1000_F_88538986_5Bi4eJ667pocsO3BIlbN4fHKz8yUFSuA.jpg"
-                                    style="width:200px;height:100px"
+                                    src="imgs/Me_in_my_setup.jpg"
+                                    style="width:600px;height:400px"
                                     alt="">
 
                             </div>
                             <div class="p-3">
 
-                                <h3>¡Hola!,me llamo Fran soy un programador full stack con mas de 9 años de
+                                <h4>¡Hola!,me llamo Fran soy un programador full stack con mas de 9 años de
                                     experiencia en el desarrollo web,en este portfolio te mostraré todos los
                                     proyectos que he ido realizando asi como los lenguajes y entornos de
-                                    programación que domino</h3>
+                                    programación que domino</h4>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col my-3">
                         <div class="card">
                             <div class="p-3">
                                 <h1>Mi CV</h1>
@@ -108,7 +112,7 @@ $result=mysqli_query($conectar,$sql);
 while($mostrar=mysqli_fetch_array($result)) {
 		
 	?>
-                    <div class=" card col mx-5 my-5   bg-white">
+                    <div class=" card col mx-5 my-5 ">
 
                         <div class="p-2">
                             <img style="width:70px;height:70px" src="<?php echo $mostrar['IMG_LINK'] ?>">
@@ -129,9 +133,9 @@ while($mostrar=mysqli_fetch_array($result)) {
 
         <div class="img"></div>
 
-<section id="projects" class="sectionfinal">
+<section id="projects" >
     <div class="text-center">
-        <div class=" revealfinal row row-cols-5">
+        <div class=" reveal row row-cols-5">
         <?php 
 	$sql="SELECT * FROM `proyectos`";
 $result=mysqli_query($conectar,$sql);
@@ -181,48 +185,9 @@ while($mostrar=mysqli_fetch_array($result)) {
     </script>
 
     <footer class="bg-dark text-center text-white">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="bi bi-1-square"></i >
-                </a>
-
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="bi bi-2-square"></i >
-                </a>
-
-                <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="bi bi-3-square"></i >
-                </a>
-
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="bi bi-4-square"></i >
-                </a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="bi bi-5-square"></i >
-                </a>
-
-                <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
-                    <i class="bi bi-6-square"></i >
-                </a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2023 Email:FranRocher95@gmail.com
         </div>
         <!-- Copyright -->
     </footer>
