@@ -4,8 +4,6 @@ function reveal() {
     const navLi = document.querySelectorAll("nav .container ul li ");
     for (var i = 0; i <= sections.length; i++) {
         var pageyoffset = window.scrollY;
-
-
         const sectionTop = sections[i].offsetTop;
         const sectioncontactHeight = sections[i].offsetHeight;
 
@@ -19,55 +17,37 @@ function reveal() {
             navLi[i].classList.remove("active");
         }
 
+        if ((pageyoffset >= 1373)) {
+            navLi[2].classList.add("active");
+            reveals[2].classList.add("active");
+        } else {
+            navLi[2].classList.remove("active");
+        }
 
 
     };
 
 };
 
-function revealfinal() {
-    const sectionfinal = document.querySelectorAll("sectionfinal");
-    const reveals = document.querySelectorAll(".revealfinal");
-    const navLifinal = document.querySelectorAll(".contact ");
+function revealnav() {
+    const nav = document.querySelectorAll(".nav_radius");
+    var pageyoffset = window.scrollY;
 
-
-
-
-    for (var i = 0; i <= sectionfinal.length; i++) {
-        var pageyoffset = window.scrollY;
-        console.log(pageyoffset);
-
-        if ((pageyoffset >= 1019)) {
-
-            reveals[i].classList.add("active");
-            navLifinal[i].classList.add("active");
+    for (var i = 0; i <= nav.length; i++) {
+        if (pageyoffset > 0) {
+            nav[i].classList.add("active");
 
         } else {
-            navLifinal[i].classList.remove("active");
+            nav[i].classList.remove("active");
         }
-    }
 
+    };
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 window.addEventListener("scroll", reveal);
-window.addEventListener("scroll", revealfinal);
+window.addEventListener("scroll", revealnav);
+
 
 
 
