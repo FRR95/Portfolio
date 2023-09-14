@@ -119,13 +119,17 @@ section:nth-child(6) {
     background-color: #b2b1b8;
 }
 
-.img {
-    background-image: url(imgs/Background_setup.jpg);
-    height: 30rem;
-    width: 100%;
+.img_background {
+    background-image: url('imgs/Background_setup.jpg');
+    height: 50vh;
     background-repeat: repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover
+}
+
+.img_skills {
+    height: 10%;
+    width: 10%;
 }
 
 .reveal {

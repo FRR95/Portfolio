@@ -26,7 +26,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
         <?php 
-$conectar=mysqli_connect('127.0.0.1','root','','portfolio');
+$conectar=mysqli_connect('mysql-8001.dinaserver.com','franc_','sql18%Noviembre95','Francisco');
 
 
 ?>
@@ -58,124 +58,131 @@ $conectar=mysqli_connect('127.0.0.1','root','','portfolio');
     <body>
 
         <section id="whoami" >
-            <div class="reveal  container  text-center">
-                <div class="row gx-5">
-                    <div class="col my-3">
-                        <div class="card">
-                            <div class="p-3">
-                                <img
-                                    src="imgs/Me_in_my_setup.jpg"
-                                    style="width:600px;height:400px"
-                                    alt="">
 
-                            </div>
-                            <div class="p-3">
-
-                                <h4>¡Hola!,me llamo Fran soy un programador full stack con mas de 9 años de
-                                    experiencia en el desarrollo web,en este portfolio te mostraré todos los
-                                    proyectos que he ido realizando asi como los lenguajes y entornos de
-                                    programación que domino</h4>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col my-3">
-                        <div class="card">
-                            <div class="p-3">
-                                <h1>Mi CV</h1>
-                                <object
-                                    data="PDF/CV DAW PORTFOLIO.pdf"
-                                    type="application/pdf"
-                                    width="100%"
-                                    height="500px">
-                                    <p>Unable to display PDF file.
-                                        <a href="PDF/CV DAW PORTFOLIO.pdf">Download</a>
-                                        instead.</p>
-                                </object>
-                            </div>
-                        </div>
-                    </div>
-
+<div class="container  text-center">
+    <div class="reveal  row row-cols-2 g-2">
+        <div class="col my-4">
+            <div class="card">
+                <img src="imgs/Me_in_my_setup.jpg" class="card-img-top" alt=""/>
+                <div class="card-body">
+                    <p class="card-text" style="font-weight: bold;">
+                        ¡Hola!,me llamo Fran soy un programador full stack con mas de 9 años de
+                        experiencia en el desarrollo web,en este portfolio te mostraré todos los
+                        proyectos que he ido realizando asi como los lenguajes y entornos de
+                        programación que domino
+                    </p>
                 </div>
-
             </div>
+        </div>
+   <div class="col my-4">
+    <div class="card">
+
+        
+         <h1>
+    Mi CV
+</h1>
+
+            <object data="PDF/CV DAW PORTFOLIO.pdf" type="application/pdf" height="530rem" >
+                <p>Unable to display PDF file.
+                    <a href="PDF/CV DAW PORTFOLIO.pdf">Download</a>
+                    instead.</p>
+            </object>
+
+        
+    </div>
+</div>
+    </div>
+</div>
         </section>
 
         <section id="skills">
-
-            <div class="  text-center">
-                <div class=" reveal  row row-cols-5 ">
-
-                    <?php 
+<div class="container text-center">
+        <div class="reveal row row-cols-3 g-3">
+<?php 
 	$sql="SELECT * FROM `habilidades`";
 $result=mysqli_query($conectar,$sql);
 while($mostrar=mysqli_fetch_array($result)) {
 		
 	?>
-                    <div class=" card col mx-5 my-5 ">
-
-                        <div class="p-2">
-                            <img style="width:70px;height:70px" src="<?php echo $mostrar['IMG_LINK'] ?>">
-
-                            <h5 ><?php echo $mostrar['TITULO'] ?></h5>
-                            <p><?php echo $mostrar['DESCRIPCIÓN'] ?></p>
-                        </div>
-                        
-                    </div>
-                    <?php 
+    <div class="my-3">
+    <div class="col ">
+        <div class="card">
+            <img
+                src="<?php echo $mostrar['IMG_LINK'] ?>"
+                class="card-img-top"
+                alt=""/>
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $mostrar['TITULO'] ?></h5>
+                <p class="card-text">
+                <?php echo $mostrar['DESCRIPCIÓN'] ?>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <?php 
         }
         ?>
-
-                </div>
-            </div>
+</div>
+</div>
 
         </section>
 
-        <div class="img"></div>
-
-<section id="projects" >
-    <div class="text-center">
-        <div class=" reveal row row-cols-5">
-        <?php 
+     
+<div class="bg-image img_background">
+</div>
+<section id="projects">
+    <div class="container text-center">
+        <div class="reveal row row-cols-3 g-3">
+            <?php 
 	$sql="SELECT * FROM `proyectos`";
 $result=mysqli_query($conectar,$sql);
 while($mostrar=mysqli_fetch_array($result)) {
 		
 	?>
-            <div class="card col mx-5 my-5 ">
-                <div class="p-2">
-                    <img
-                        src="<?php echo $mostrar['IMG_LINK'] ?>"
-                        style="width:200px;height:100px"
-                        alt="">
+            <div class="my-3">
+                <div class="col ">
+                    <div class="card">
+                        <img src="<?php echo $mostrar['IMG_LINK'] ?>" class="card-img-top" alt=""/>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $mostrar['TITULO'] ?></h5>
+                            <p class="card-text">
+                                <?php echo $mostrar['DESCRIPCIÓN'] ?>
+                            </p>
+                            <p class="card-text">
+                                FrontEnd:<?php echo $mostrar['DETALLES'] ?>
+                            </p>
+                            <p class="card-text">
+                                BackEnd:<?php echo $mostrar['detalles_back'] ?>
+                            </p>
+                            <p class="card-text">
+                                <a href="<?php echo $mostrar['GITHUB_LINK'] ?>">
+                                    <button type="button" class="btn btn-outline-dark mb-2">
+                                        <i class="bi bi-github"></i>
+                                        Link a github
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="card-text">
+                                <a href="<?php echo $mostrar['WEB_LINK'] ?>">
+                                    <button type="button" class="btn btn-outline-info mb-2">
+                                        <i class="bi bi-globe-americas"></i>
+                                        Link a la web
+                                    </button>
+                                </a>
+                            </p>
 
-                        <h5 ><?php echo $mostrar['TITULO'] ?></h5>
-
-                        <p ><?php echo $mostrar['DESCRIPCIÓN'] ?></p>
-                        <p>FrontEnd:<?php echo $mostrar['DETALLES'] ?> </p>
-                        <p>BackEnd: <?php echo $mostrar['detalles_back'] ?></p>
-                        <a href="<?php echo $mostrar['GITHUB_LINK'] ?>">
-                            <button type="button" class="btn btn-outline-dark mb-2">
-                                <i class="bi bi-github"></i>
-                                Aqui va el link de github
-                            </button>
-                        </a>
-                        <a href="<?php echo $mostrar['WEB_LINK'] ?>">
-                            <button type="button" class="btn btn-outline-info">
-                                <i class="bi bi-globe-americas"></i>
-                                Aqui va el link a la web
-                            </button>
-                        </a>
+                        </div>
                     </div>
                 </div>
-                <?php 
+            </div>
+            <?php 
         }
         ?>
-            </div>
-
         </div>
+    </div>
 
-    </section>
+</section>
 
     </body>
     <script>
