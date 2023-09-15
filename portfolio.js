@@ -16,15 +16,6 @@ function reveal() {
         } else {
             navLi[i].classList.remove("active");
         }
-
-        if ((pageyoffset >= 1373)) {
-            navLi[2].classList.add("active");
-            reveals[2].classList.add("active");
-        } else {
-            navLi[2].classList.remove("active");
-        }
-
-
     };
 
 };
@@ -34,7 +25,7 @@ function revealnav() {
     var pageyoffset = window.scrollY;
 
     for (var i = 0; i <= nav.length; i++) {
-        if (pageyoffset > 0) {
+        if (pageyoffset > 2) {
             nav[i].classList.add("active");
 
         } else {
