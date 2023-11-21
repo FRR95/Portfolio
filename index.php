@@ -26,7 +26,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
         <?php 
-$conectar=mysqli_connect('mysql-8001.dinaserver.com','francisco','sql18%Noviembre95','francisco');
+
 
 
 ?>
